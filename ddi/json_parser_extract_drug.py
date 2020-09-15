@@ -22,20 +22,22 @@ def parse(filename):
 #entities": {"gene": [{"end": 61, "id": "CUI-less", "start": 47}, {"end": 77, "id": "CUI-less", "start": 66}], "disease": [], 
 # "drug": [{"end": 61, "id": "CUI-less", "start": 47}, {"end": 77, "id": "CUI-less", "start": 66}], "species": [], "mutation": [], "pathway": [], "miRNA": []}
 def parse_obj(js_obj):
+    '''
+    Extract pmid, title ansd sentences with drug or without drug data
+    '''
     tmp_dict = {}
+    tmp_dict['pmid']= js_obj['pmid']
+    tmp_dict['title'] = js_obj['title']
+    tmp_dict['abstract'] = js_obj['abstract']
+    tmp_dict['sentence'] = js_obj['title'] + ' ' + js_obj['abstract'] # space between title and abstract
     if 'entities' in js_obj:
         if 'drug' in js_obj['entities']:
-            if len(js_obj['entities']['drug'])>=2:
-                tmp_dict['pmid']= js_obj['pmid']
-                # tmp_dict['title'] = js_obj['title']
-                # tmp_dict['abstract'] = js_obj['abstract']
-                tmp_dict['sentence'] = js_obj['title'] + ' ' + js_obj['abstract'] # space between title and abstract
-                for i, drug in enumerate(js_obj['entities']['drug']):
-                    tmp_dict['drug_{}'.format(i)] = tmp_dict['sentence'][drug['start']:drug['end']]
-                    tmp_dict['start_{}'.format(i)] = drug['start']
-                    tmp_dict['end_{}'.format(i)] = drug['end']
-                return OrderedDict(tmp_dict)
-    return tmp_dict
+            for i, drug in enumerate(js_obj['entities']['drug']):
+                tmp_dict['drug_{}'.format(i+1)] = tmp_dict['sentence'][drug['start']:drug['end']]
+                tmp_dict['start_{}'.format(i+1)] = drug['start']
+                tmp_dict['end_{}'.format(i+1)] = drug['end']        
+    return OrderedDict(tmp_dict)
+  
 
 
 def paserFile(filename):
