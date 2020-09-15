@@ -100,8 +100,8 @@ def run_parser(files_list_all, start_id, end_id, output_path):
     
     elapsedTime = time.time() - startTime
     print ("\t\t Time_Taken_by_File_Parsing_Each_Loop: ", elapsedTime)
-    
     df_file.to_csv(os.path.join(output_path,'parsed_file_{}_{}.tsv'.format(start_id+1, end_id+1)), sep='\t', index=False, encoding='utf-8')
+    df_file[['pmid', 'sentence_@DRUG$']][0:3000].to_csv(os.path.join(output_path,'pubmed_file_bert_data_{}_{}.tsv'.format(start_id+1, end_id+1)), sep='\t', index=False, encoding='utf-8')
     del df_file
     
     return None
@@ -141,7 +141,7 @@ def main():
                     [((n_files//n_files_per_loop)*n_files_per_loop, n_files)]
     
 
-    out = [run_parser(files_list_all, s_i, e_i, output_path) for s_i, e_i in start_end_id_l]
+    out = [run_parser(files_list_all, s_i, e_i, output_path) for s_i, e_i in start_end_id_l if s_i!=e_i]
 
 if __name__ == "__main__":
     print("Start: JSONParser")

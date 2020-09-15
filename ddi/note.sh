@@ -18,18 +18,18 @@ source /nfs/home/vyasa/software/pkg/blue_bert_py_env/bin/activate
 #   --do_lower_case=true
 
 
-#   python bluebert/run_bluebert.py \
-#   --do_train=false \
-#   --do_eval=false \
-#   --do_predict=true \
-#   --task_name="ddi" \
-#   --vocab_file=$BlueBERT_DIR/vocab.txt \
-#   --bert_config_file=$BlueBERT_DIR/bert_config.json \
-#   --init_checkpoint=$BlueBERT_DIR/bert_model.ckpt \
-#   --num_train_epochs=10.0 \
-#   --data_dir=$DATASET_DIR \
-#   --output_dir=$OUTPUT_DIR \
-#   --do_lower_case=true
+  python bluebert/run_bluebert.py \
+  --do_train=false \
+  --do_eval=false \
+  --do_predict=true \
+  --task_name="ddi" \
+  --vocab_file=$BlueBERT_DIR/vocab.txt \
+  --bert_config_file=$BlueBERT_DIR/bert_config.json \
+  --init_checkpoint=$BlueBERT_DIR/bert_model.ckpt \
+  --num_train_epochs=10.0 \
+  --data_dir=$DATASET_DIR \
+  --output_dir=$OUTPUT_DIR \
+  --do_lower_case=true
 
 
   

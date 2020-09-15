@@ -50,6 +50,7 @@ def add_arguments():
     parser.add_argument('-r','--result_file', dest='result_file', help='result tsv_file with label probability')
     parser.add_argument('-t','--test_file', dest='test_file', help='test tsv_file with label')
     parser.add_argument('-s','--sep', dest='file_sep', type=str, help='file field delimiter')
+    parser.add_argument('-o','--output_path', dest='output_path', type=str, help='output path')
     return parser
     
 def main():
@@ -59,6 +60,7 @@ def main():
     result_file = args.result_file
     test_file = args.test_file
     file_sep = args.file_sep
+    output_path = args.output_path
     print (result_file, test_file, str(file_sep))
 
     uni_label_id = [0, 1, 2, 3, 4]
@@ -81,7 +83,12 @@ def main():
     # For SDM ddi data
     # df = evl.get_df(test_file, ',', header='infer')
     # df['predicted_label'] = res_label
-    # df.to_csv('new_pattern_pred_label.csv', index=False)
+    # df.to_csv(os.path.join(output_path,'new_pattern_pred_label.csv'), index=False)
+
+    # For pubmed data
+    df = evl.get_df(test_file, '\t', header='infer')
+    df['predicted_label'] = res_label
+    df.to_csv(os.path.join(output_path,'new_pattern_pred_label_pubmed.tsv'), index=False, sep='\t')
 
 if __name__ == "__main__":
     print('#######')
