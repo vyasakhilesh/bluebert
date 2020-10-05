@@ -1,0 +1,57 @@
+[I 16:14:07.303 LabApp] JupyterLab extension loaded from /home/tibvyasa/miniconda3/lib/python3.8/site-packages/jupyterlab
+[I 16:14:07.303 LabApp] JupyterLab application directory is /home/tibvyasa/miniconda3/share/jupyter/lab
+[I 16:14:07.305 LabApp] Serving notebooks from local directory: /home/tibvyasa/projects/proj_os/repos/bluebert
+[I 16:14:07.305 LabApp] Jupyter Notebook 6.1.4 is running at:
+[I 16:14:07.305 LabApp] http://localhost:8892/?token=5266d85a780641d6fdee8188bb0b5512ed71ea4539639540
+[I 16:14:07.306 LabApp]  or http://127.0.0.1:8892/?token=5266d85a780641d6fdee8188bb0b5512ed71ea4539639540
+[I 16:14:07.306 LabApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 16:14:07.308 LabApp] 
+    
+    To access the notebook, open this file in a browser:
+        file:///home/tibvyasa/.local/share/jupyter/runtime/nbserver-12025-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8892/?token=5266d85a780641d6fdee8188bb0b5512ed71ea4539639540
+     or http://127.0.0.1:8892/?token=5266d85a780641d6fdee8188bb0b5512ed71ea4539639540
+[I 16:14:18.769 LabApp] 302 GET /?token=5266d85a780641d6fdee8188bb0b5512ed71ea4539639540 (127.0.0.1) 0.47ms
+[W 16:14:36.126 LabApp] Could not determine jupyterlab build status without nodejs
+[W 16:14:50.879 LabApp] 404 GET /api/contents/new_prediction_models/model_5DT.pdf?content=0&1601043290955 (127.0.0.1): No such file or directory: new_prediction_models/model_5DT.pdf
+[W 16:14:50.880 LabApp] No such file or directory: new_prediction_models/model_5DT.pdf
+[W 16:14:50.881 LabApp] 404 GET /api/contents/new_prediction_models/model_5DT.pdf?content=0&1601043290955 (127.0.0.1) 53.13ms referer=http://localhost:8892/lab
+[W 16:14:50.951 LabApp] 404 GET /api/contents/new_prediction_models/Model%201s%20%7C%200%2C%201.ipynb?content=0&1601043290956 (127.0.0.1): No such file or directory: new_prediction_models/Model 1s | 0, 1.ipynb
+[W 16:14:50.951 LabApp] No such file or directory: new_prediction_models/Model 1s | 0, 1.ipynb
+[W 16:14:50.952 LabApp] 404 GET /api/contents/new_prediction_models/Model%201s%20%7C%200%2C%201.ipynb?content=0&1601043290956 (127.0.0.1) 123.57ms referer=http://localhost:8892/lab
+[W 16:14:51.037 LabApp] 404 GET /api/contents/new_prediction_models/Model%202%20%7C%200%2C%201%2C%202%2C%203%2C%204.ipynb?content=0&1601043290957 (127.0.0.1): No such file or directory: new_prediction_models/Model 2 | 0, 1, 2, 3, 4.ipynb
+[W 16:14:51.038 LabApp] No such file or directory: new_prediction_models/Model 2 | 0, 1, 2, 3, 4.ipynb
+[W 16:14:51.038 LabApp] 404 GET /api/contents/new_prediction_models/Model%202%20%7C%200%2C%201%2C%202%2C%203%2C%204.ipynb?content=0&1601043290957 (127.0.0.1) 209.87ms referer=http://localhost:8892/lab
+[W 16:14:51.098 LabApp] 404 GET /api/contents/new_prediction_models/Model%203%20%7C%201%2C%202%2C%203%2C%204.ipynb?content=0&1601043290958 (127.0.0.1): No such file or directory: new_prediction_models/Model 3 | 1, 2, 3, 4.ipynb
+[W 16:14:51.099 LabApp] No such file or directory: new_prediction_models/Model 3 | 1, 2, 3, 4.ipynb
+[W 16:14:51.099 LabApp] 404 GET /api/contents/new_prediction_models/Model%203%20%7C%201%2C%202%2C%203%2C%204.ipynb?content=0&1601043290958 (127.0.0.1) 270.58ms referer=http://localhost:8892/lab
+[W 16:14:51.174 LabApp] 404 GET /api/contents/new_prediction_models/Model%204%20%7C%200%2C%20(1%2C%202)%2C%20(3%2C%204).ipynb?content=0&1601043290960 (127.0.0.1): No such file or directory: new_prediction_models/Model 4 | 0, (1, 2), (3, 4).ipynb
+[W 16:14:51.174 LabApp] No such file or directory: new_prediction_models/Model 4 | 0, (1, 2), (3, 4).ipynb
+[W 16:14:51.175 LabApp] 404 GET /api/contents/new_prediction_models/Model%204%20%7C%200%2C%20(1%2C%202)%2C%20(3%2C%204).ipynb?content=0&1601043290960 (127.0.0.1) 345.96ms referer=http://localhost:8892/lab
+[W 16:14:51.234 LabApp] 404 GET /api/contents/new_prediction_models/utils.py?content=0&1601043290961 (127.0.0.1): No such file or directory: new_prediction_models/utils.py
+[W 16:14:51.234 LabApp] No such file or directory: new_prediction_models/utils.py
+[W 16:14:51.235 LabApp] 404 GET /api/contents/new_prediction_models/utils.py?content=0&1601043290961 (127.0.0.1) 58.62ms referer=http://localhost:8892/lab
+[W 16:14:51.307 LabApp] 404 GET /api/contents/new_prediction_models/Model%205%20%7C%20(1%2C%202)%2C%20(3%2C%204).ipynb?content=0&1601043290961 (127.0.0.1): No such file or directory: new_prediction_models/Model 5 | (1, 2), (3, 4).ipynb
+[W 16:14:51.308 LabApp] No such file or directory: new_prediction_models/Model 5 | (1, 2), (3, 4).ipynb
+[W 16:14:51.308 LabApp] 404 GET /api/contents/new_prediction_models/Model%205%20%7C%20(1%2C%202)%2C%20(3%2C%204).ipynb?content=0&1601043290961 (127.0.0.1) 131.03ms referer=http://localhost:8892/lab
+[W 16:14:52.222 LabApp] 404 GET /api/contents/new_prediction_models?1601043292318 (127.0.0.1): No such file or directory: new_prediction_models
+[W 16:14:52.222 LabApp] No such file or directory: new_prediction_models
+[W 16:14:52.222 LabApp] 404 GET /api/contents/new_prediction_models?1601043292318 (127.0.0.1) 65.44ms referer=http://localhost:8892/lab
+[I 16:23:05.981 LabApp] JupyterLab extension loaded from /home/tibvyasa/miniconda3/envs/dtree/lib/python3.8/site-packages/jupyterlab
+[I 16:23:05.981 LabApp] JupyterLab application directory is /home/tibvyasa/miniconda3/envs/dtree/share/jupyter/lab
+[I 16:23:05.983 LabApp] Serving notebooks from local directory: /home/tibvyasa/projects/proj_os/repos/bluebert
+[I 16:23:05.984 LabApp] Jupyter Notebook 6.1.4 is running at:
+[I 16:23:05.984 LabApp] http://localhost:8893/?token=caea87cdaf0e6a41f9fc7846d7e8860bf7fce22898f823da
+[I 16:23:05.984 LabApp]  or http://127.0.0.1:8893/?token=caea87cdaf0e6a41f9fc7846d7e8860bf7fce22898f823da
+[I 16:23:05.984 LabApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 16:23:05.987 LabApp] 
+    
+    To access the notebook, open this file in a browser:
+        file:///home/tibvyasa/.local/share/jupyter/runtime/nbserver-12041-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8893/?token=caea87cdaf0e6a41f9fc7846d7e8860bf7fce22898f823da
+     or http://127.0.0.1:8893/?token=caea87cdaf0e6a41f9fc7846d7e8860bf7fce22898f823da
+[C 16:23:19.602 LabApp] received signal 15, stopping
+[I 16:23:19.603 LabApp] Shutting down 0 kernels
+[I 16:23:19.603 LabApp] Shutting down 0 terminals

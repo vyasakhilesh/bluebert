@@ -15,7 +15,7 @@ class utils(object):
 
     
     def get_df(self, filename, sep, header=None):
-        return pd.read_csv(filename, sep=sep, header=header)
+        return pd.read_csv(filename, sep=sep, header=header, encoding='utf-8')
 
     def get_max_id_label(self, df, axis=1):
         max_col = df.idxmax(axis)
@@ -69,6 +69,8 @@ def main():
     res_df = evl.get_df(result_file, file_sep)
     print (evl.display_df(res_df))
     res_label = evl.get_label_frm_index(evl.get_max_id_label(res_df), uni_label_id, uni_label)
+
+    # DDI-task-2013
     # tes_df = evl.get_df(test_file, file_sep, header='infer')
     # print (evl.display_df(tes_df))
     # tes_label = evl.get_label(tes_df, 'label')
@@ -88,11 +90,12 @@ def main():
     # For pubmed data
     df = evl.get_df(test_file, '\t', header='infer')
     df['predicted_label'] = res_label
-    df.to_csv(os.path.join(output_path,'new_pattern_pred_label_pubmed.tsv'), index=False, sep='\t')
+    df.to_csv(os.path.join(output_path,'new_pattern_pred_label_pubmed_sample.tsv'), index=False, sep='\t')
 
 if __name__ == "__main__":
     print('#######')
     main()
+    
 
 
 
