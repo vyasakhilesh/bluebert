@@ -1,0 +1,58 @@
+[I 13:14:47.967 LabApp] JupyterLab extension loaded from /nfs/home/vyasa/software/pkg/blue_bert_py_env/lib/python3.7/site-packages/jupyterlab
+[I 13:14:47.967 LabApp] JupyterLab application directory is /nfs/home/vyasa/software/pkg/blue_bert_py_env/share/jupyter/lab
+[I 13:14:47.974 LabApp] Serving notebooks from local directory: /nfs/home/vyasa/projects/proj_os/repos/bluebert/ddi/notebooks
+[I 13:14:47.975 LabApp] Jupyter Notebook 6.1.4 is running at:
+[I 13:14:47.975 LabApp] http://localhost:8889/
+[I 13:14:47.975 LabApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 13:15:36.234 LabApp] 302 GET / (::1) 1.42ms
+[I 13:15:36.273 LabApp] 302 GET /lab? (::1) 1.96ms
+[I 13:15:40.118 LabApp] 302 POST /login?next=%2Flab%3F (::1) 68.94ms
+[W 13:15:41.862 LabApp] Could not determine jupyterlab build status without nodejs
+[W 13:15:43.663 LabApp] 404 GET /api/contents/dementia_prediction_model/new_prediction_models/Model%201s%20%7C%200%2C%201.ipynb?content=0&1602069344073 (::1): No such file or directory: dementia_prediction_model/new_prediction_models/Model 1s | 0, 1.ipynb
+[W 13:15:43.664 LabApp] No such file or directory: dementia_prediction_model/new_prediction_models/Model 1s | 0, 1.ipynb
+[W 13:15:43.664 LabApp] 404 GET /api/contents/dementia_prediction_model/new_prediction_models/Model%201s%20%7C%200%2C%201.ipynb?content=0&1602069344073 (::1) 2.84ms referer=http://localhost:8889/lab?
+[W 13:15:43.668 LabApp] 404 GET /api/contents/dementia_prediction_model/new_prediction_models/defines.py?content=0&1602069344075 (::1): No such file or directory: dementia_prediction_model/new_prediction_models/defines.py
+[W 13:15:43.669 LabApp] No such file or directory: dementia_prediction_model/new_prediction_models/defines.py
+[W 13:15:43.669 LabApp] 404 GET /api/contents/dementia_prediction_model/new_prediction_models/defines.py?content=0&1602069344075 (::1) 2.15ms referer=http://localhost:8889/lab?
+[W 13:15:44.440 LabApp] 404 GET /api/contents/dementia_prediction_model/new_prediction_models?1602069344846 (::1): No such file or directory: dementia_prediction_model/new_prediction_models
+[W 13:15:44.440 LabApp] No such file or directory: dementia_prediction_model/new_prediction_models
+[W 13:15:44.441 LabApp] 404 GET /api/contents/dementia_prediction_model/new_prediction_models?1602069344846 (::1) 2.17ms referer=http://localhost:8889/lab?
+[I 13:15:47.448 LabApp] Creating new notebook in /
+[I 13:15:48.152 LabApp] Kernel started: 8625decd-ee46-4f2e-b278-ed424b2f7ae0, name: python3
+[I 13:17:47.938 LabApp] Saving file at /result_analysis.ipynb
+[I 13:19:48.152 LabApp] Saving file at /result_analysis.ipynb
+[I 13:21:48.308 LabApp] Saving file at /result_analysis.ipynb
+[I 13:23:48.427 LabApp] Saving file at /result_analysis.ipynb
+[I 13:25:48.591 LabApp] Saving file at /result_analysis.ipynb
+[I 13:27:48.840 LabApp] Saving file at /result_analysis.ipynb
+[I 13:29:49.046 LabApp] Saving file at /result_analysis.ipynb
+[I 13:47:51.972 LabApp] Saving file at /result_analysis.ipynb
+[I 13:49:52.166 LabApp] Saving file at /result_analysis.ipynb
+[I 13:51:52.308 LabApp] Saving file at /result_analysis.ipynb
+[I 13:53:52.471 LabApp] Saving file at /result_analysis.ipynb
+[I 13:55:52.634 LabApp] Saving file at /result_analysis.ipynb
+[I 13:57:52.867 LabApp] Saving file at /result_analysis.ipynb
+[I 13:58:22.068 LabApp] Saving file at /result_analysis.ipynb
+[I 13:58:25.625 LabApp] Saving file at /result_analysis.ipynb
+[I 14:12:28.022 LabApp] Saving file at /result_analysis.ipynb
+[I 14:14:28.191 LabApp] Saving file at /result_analysis.ipynb
+[I 14:20:28.448 LabApp] Saving file at /result_analysis.ipynb
+[I 14:22:28.668 LabApp] Saving file at /result_analysis.ipynb
+[I 14:24:28.845 LabApp] Saving file at /result_analysis.ipynb
+[I 14:26:29.032 LabApp] Saving file at /result_analysis.ipynb
+[I 14:32:30.076 LabApp] Saving file at /result_analysis.ipynb
+[I 14:34:30.306 LabApp] Saving file at /result_analysis.ipynb
+[I 14:36:30.553 LabApp] Saving file at /result_analysis.ipynb
+[I 14:38:30.801 LabApp] Saving file at /result_analysis.ipynb
+[I 14:40:31.033 LabApp] Saving file at /result_analysis.ipynb
+[I 14:42:31.256 LabApp] Saving file at /result_analysis.ipynb
+[I 14:44:31.516 LabApp] Saving file at /result_analysis.ipynb
+[I 14:46:32.009 LabApp] Saving file at /result_analysis.ipynb
+[I 14:54:33.033 LabApp] Saving file at /result_analysis.ipynb
+[I 14:56:33.293 LabApp] Saving file at /result_analysis.ipynb
+[I 14:58:34.034 LabApp] Saving file at /result_analysis.ipynb
+[I 15:00:34.407 LabApp] Saving file at /result_analysis.ipynb
+[I 15:02:34.714 LabApp] Saving file at /result_analysis.ipynb
+[I 15:04:34.986 LabApp] Saving file at /result_analysis.ipynb
+[I 15:06:36.066 LabApp] Saving file at /result_analysis.ipynb
+[I 09:58:25.277 LabApp] Starting buffering for 8625decd-ee46-4f2e-b278-ed424b2f7ae0:43b2bba3-e646-4404-9882-df5f78e12cad

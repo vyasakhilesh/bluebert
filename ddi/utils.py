@@ -90,7 +90,7 @@ def main():
     # For pubmed data
     df = evl.get_df(test_file, '\t', header='infer')
     df['predicted_label'] = res_label
-    df.to_csv(os.path.join(output_path,'new_pattern_pred_label_pubmed_sample.tsv'), index=False, sep='\t')
+    df.to_csv(os.path.join(output_path,'new_pattern_pred_label_pubmed_sample.tsv'), index=False, sep='\t', encoding='utf=8')
 
 if __name__ == "__main__":
     print('#######')

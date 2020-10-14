@@ -658,3 +658,7 @@ INFO:tensorflow:Running local_init_op.
 I1005 10:38:30.353406 139707280123712 session_manager.py:500] Running local_init_op.
 INFO:tensorflow:Done running local_init_op.
 I1005 10:38:30.405627 139707280123712 session_manager.py:502] Done running local_init_op.
+INFO:tensorflow:prediction_loop marked as finished
+I1005 13:03:46.454316 139707280123712 error_handling.py:101] prediction_loop marked as finished
+INFO:tensorflow:prediction_loop marked as finished
+I1005 13:03:46.454852 139707280123712 error_handling.py:101] prediction_loop marked as finished
