@@ -47,10 +47,10 @@ class utils(object):
 
 def add_arguments():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-r','--result_file', dest='result_file', help='result tsv_file with label probability')
-    parser.add_argument('-t','--test_file', dest='test_file', help='test tsv_file with label')
+    parser.add_argument('-r','--result_file', dest='result_file', help='result tsv_file with label probability', required=True)
+    parser.add_argument('-t','--test_file', dest='test_file', help='test tsv_file with label', required=True)
     parser.add_argument('-s','--sep', dest='file_sep', type=str, help='file field delimiter')
-    parser.add_argument('-o','--output_path', dest='output_path', type=str, help='output path')
+    parser.add_argument('-o','--output_path', dest='output_path', type=str, help='output path', required=True)
     return parser
     
 def main():
@@ -90,7 +90,9 @@ def main():
     # For pubmed data
     df = evl.get_df(test_file, '\t', header='infer')
     df['predicted_label'] = res_label
-    df.to_csv(os.path.join(output_path,'new_pattern_pred_label_pubmed_sample.tsv'), index=False, sep='\t', encoding='utf=8')
+    #df.to_csv(os.path.join(output_path,'new_pattern_pred_label_pubmed_sample.tsv'), index=False, sep='\t', encoding='utf=8')
+    df.to_csv(os.path.join(output_path,'semrep_gld_pred_label_nonstrict.tsv'), index=False, sep='\t', encoding='utf=8')
+
 
 if __name__ == "__main__":
     print('#######')
