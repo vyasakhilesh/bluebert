@@ -5,15 +5,15 @@ import os
 
 import xml.etree.ElementTree as ET
 
-# semantic_types_drug = ['Antibiotic', 'Substance', 'Chemical Viewed Structurally', 'Fish', 'Organism', 'Invertebrate', 
-#                        'Hazardous or Poisonous Substance',  'Steroid', 'Therapeutic or Preventive Procedure', 'Organophosphorus Compound', 
-#                        'Organic Chemical',  'Hormone', 'Laboratory Procedure', 'Clinical Drug', 'Chemical', 
-#                        'Inorganic Chemical', 'Pharmacologic Substance', 'Vitamin', 'Carbohydrate', 'Biologically Active Substance']
-# predicate_type_ddi = ['INTERACTS_WITH', 'INHIBITS', 'STIMULATES']
+semantic_types_drug = ['Antibiotic', 'Substance', 'Chemical Viewed Structurally', 'Fish', 'Organism', 'Invertebrate', 
+                        'Hazardous or Poisonous Substance',  'Steroid', 'Therapeutic or Preventive Procedure', 'Organophosphorus Compound', 
+                        'Organic Chemical',  'Hormone', 'Laboratory Procedure', 'Clinical Drug', 'Chemical', 
+                        'Inorganic Chemical', 'Pharmacologic Substance', 'Vitamin', 'Carbohydrate', 'Biologically Active Substance']
+predicate_type_ddi = ['INTERACTS_WITH', 'INHIBITS', 'STIMULATES']
 
 # Strict Drug Semantic-Type
-semantic_types_drug = ['Pharmacologic Substance']
-predicate_type_ddi = []
+# semantic_types_drug = ['Pharmacologic Substance']
+# predicate_type_ddi = []
 
 
 def replace_text(text, charoffset1, subtext1, charoffset2, subtext2, replace_string='@DRUG$'):
@@ -46,7 +46,7 @@ def replace_text(text, charoffset1, subtext1, charoffset2, subtext2, replace_str
 def create_semrep_gld_bert(input_file, output_file, output_file_test, del_='\t'):
     fp = open(output_file, 'w', encoding='utf-8')
     writer = csv.writer(fp, delimiter=del_, lineterminator='\n')
-    writer.writerow(['pmid', 'text', 'text_drug', 'semrep_label'])
+    writer.writerow(['pmid', 'text', 'text_drug', 'drug1', 'drug2', 'semantic_type_drug1', 'semantic_type_drug2', 'relation_semantic_type_drug1', 'relation_semantic_type_drug2', 'semrep_label'])
 
     # Test file
     fp_test = open(output_file_test, 'w', encoding='utf-8')
@@ -80,13 +80,17 @@ def create_semrep_gld_bert(input_file, output_file, output_file_test, del_='\t')
                         flag_drug1 = False
                         charoffset1 = ''
                         subtext1 = ''
+                        semantic_type_drug1 = ''
+                        relation_semantic_type_drug1 = ''
 
                         #Object Parsing
                         flag_drug2 = False
                         charoffset2 = ''
                         subtext2 = ''
+                        semantic_type_drug2 = ''
+                        relation_semantic_type_drug2= ''
 
-                        if pred.attrib['type'] in predicate_type_ddi or True: # Always True as preicate type nt decided
+                        if pred.attrib['type'] in predicate_type_ddi or True: # Always True as preicate type not decided
                 
                             for sem_type in sub.iter('SemanticTypes'):
                                 for s_t_i in sem_type.iter('SemanticType'):
@@ -95,6 +99,8 @@ def create_semrep_gld_bert(input_file, output_file, output_file_test, del_='\t')
                                     if s_t_i.text in semantic_types_drug:
                                         charoffset1 = int(sub.attrib['charOffset'])
                                         subtext1 = sub.attrib['text']
+                                        semantic_type_drug1 = ', '.join([s_t_i.text for s_t_i in sem_type.iter('SemanticType') for sem_type in sub.iter('SemanticTypes')])
+                                        relation_semantic_type_drug1 = [res.text for res in sub.iter('RelationSemanticType')][0]
                                         flag_drug1 = True
                                         break
                             
@@ -105,12 +111,19 @@ def create_semrep_gld_bert(input_file, output_file, output_file_test, del_='\t')
                                     if s_t_i.text in semantic_types_drug:
                                         charoffset2 = int(obj.attrib['charOffset'])
                                         subtext2 = obj.attrib['text']
+                                        semantic_type_drug2 = ', '.join([s_t_i.text for s_t_i in sem_type.iter('SemanticType') for sem_type in obj.iter('SemanticTypes')])
+                                        relation_semantic_type_drug2 = [res.text for res in obj.iter('RelationSemanticType')][0]
                                         flag_drug2 = True
                                         break
                             
                         if (flag_drug1 & flag_drug2):
                             text_drug = replace_text(text, charoffset1, subtext1, charoffset2, subtext2)
-                            writer.writerow([pmid, text, text_drug, label])
+                            if (charoffset1 < charoffset2):
+                                writer.writerow([pmid, text, text_drug, subtext1, subtext2, semantic_type_drug1, semantic_type_drug2, 
+                                relation_semantic_type_drug1, relation_semantic_type_drug2, label])
+                            else:
+                                writer.writerow([pmid, text, text_drug, subtext2, subtext1, semantic_type_drug2, semantic_type_drug1, 
+                                relation_semantic_type_drug2, relation_semantic_type_drug1, label])
                             writer_test.writerow([pmid, text_drug])
 
 
@@ -134,10 +147,10 @@ def main():
     output_path = args.output_path
     print (input_file, str(del_))
     
-    output_file =os.path.join(output_path+'semrep_gld_bert_data_strict.tsv')
-    output_file_test =os.path.join(output_path+'semrep_gld_bert_data_strict_test.tsv')
-    # output_file =os.path.join(output_path+'semrep_gld_bert_data_nonstrict.tsv')
-    # output_file_test =os.path.join(output_path+'semrep_gld_bert_data_nonstrict_test.tsv')
+    # output_file =os.path.join(output_path+'semrep_gld_bert_data_strict.tsv')
+    # output_file_test =os.path.join(output_path+'semrep_gld_bert_data_strict_test.tsv')
+    output_file =os.path.join(output_path+'semrep_gld_bert_data_nonstrict_semtype.tsv')
+    output_file_test =os.path.join(output_path+'semrep_gld_bert_data_nonstrict_test_old.tsv')
     
     create_semrep_gld_bert(input_file, output_file, output_file_test)
 if __name__ == '__main__':
