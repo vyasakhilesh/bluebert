@@ -71,16 +71,16 @@ def main():
     res_label = evl.get_label_frm_index(evl.get_max_id_label(res_df), uni_label_id, uni_label)
 
     # DDI-task-2013
-    # tes_df = evl.get_df(test_file, file_sep, header='infer')
-    # print (evl.display_df(tes_df))
-    # tes_label = evl.get_label(tes_df, 'label')
+    tes_df = evl.get_df(test_file, file_sep, header='infer')
+    #print (evl.display_df(tes_df))
+    tes_label = evl.get_label(tes_df, 'label')
     # print ('##################################')
     # print (type(res_label), type(tes_label))
     # print (res_label.shape, tes_label.shape)
     # print (res_label[0:5], tes_label[0:5])
-    # print (evl.get_precision(tes_label, res_label))
-    # print (evl.get_recall(tes_label, res_label))
-    # print (evl.get_f1(tes_label, res_label))
+    print (evl.get_precision(tes_label, res_label))
+    print (evl.get_recall(tes_label, res_label))
+    print (evl.get_f1(tes_label, res_label))
     
     # For SDM ddi data
     # df = evl.get_df(test_file, ',', header='infer')
@@ -88,10 +88,15 @@ def main():
     # df.to_csv(os.path.join(output_path,'new_pattern_pred_label.csv'), index=False)
 
     # For pubmed data
-    df = evl.get_df(test_file, '\t', header='infer')
-    df['predicted_label'] = res_label
+    # df = evl.get_df(test_file, '\t', header='infer')
+    # df['predicted_label'] = res_label
     #df.to_csv(os.path.join(output_path,'new_pattern_pred_label_pubmed_sample.tsv'), index=False, sep='\t', encoding='utf=8')
-    df.to_csv(os.path.join(output_path,'semrep_gld_pred_label_nonstrict_semtype.tsv'), index=False, sep='\t', encoding='utf=8')
+    # df.to_csv(os.path.join(output_path,'semrep_gld_pred_label_nonstrict_semtype.tsv'), index=False, sep='\t', encoding='utf=8')
+
+    # For clinical data
+    # df = evl.get_df(test_file, '\t', header='infer')
+    # df['predicted_label'] = res_label
+    # df.to_csv(os.path.join(output_path,'clinical_data_pred_ddi.tsv'), index=False, sep='\t', encoding='utf=8')
 
 
 if __name__ == "__main__":
