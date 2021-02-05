@@ -71,16 +71,16 @@ def main():
     res_label = evl.get_label_frm_index(evl.get_max_id_label(res_df), uni_label_id, uni_label)
 
     # chemprot- task
-    # tes_df = evl.get_df(test_file, file_sep, header='infer')
+    #tes_df = evl.get_df(test_file, file_sep, header='infer')
     # print (evl.display_df(tes_df))
     # tes_label = evl.get_label(tes_df, 'label')
     # print ('##################################')
     # print (type(res_label), type(tes_label))
     # print (res_label.shape, tes_label.shape)
     # print (res_label[0:6], tes_label[0:6])
-    # print (evl.get_precision(tes_label, res_label))
-    # print (evl.get_recall(tes_label, res_label))
-    # print (evl.get_f1(tes_label, res_label))
+    """print (evl.get_precision(tes_label, res_label))
+    print (evl.get_recall(tes_label, res_label))
+    print (evl.get_f1(tes_label, res_label))"""
     
     # For SDM ddi data
     # df = evl.get_df(test_file, ',', header='infer')

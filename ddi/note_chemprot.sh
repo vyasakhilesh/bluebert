@@ -2,8 +2,9 @@
 export DATASET_DIR=/nfs/home/vyasa/projects/proj_os/data_os/bluebert_data/bert_data/ChemProt
 export PYTHONPATH=/nfs/home/vyasa/projects/proj_os/repos/bluebert
 export BlueBERT_DIR=/nfs/home/vyasa/projects/proj_os/data_os/bluebert_data/NCBI_BERT_pubmed_uncased_L-12_H-768_A-12
-export OUTPUT_DIR=/nfs/home/vyasa/projects/proj_os/data_os/bluebert_data/output_chemprot
-source /nfs/home/vyasa/software/pkg/blue_bert_py_env/bin/activate
+export OUTPUT_DIR=/nfs/home/vyasa/projects/proj_os/data_os/bluebert_data/output_chemprot_gpu
+source /nfs/home/vyasa/software/pkg/miniconda3/bin/activate
+conda activate bluebert
 
 # python bluebert/run_bluebert.py \
 #   --do_train=true \
@@ -33,7 +34,7 @@ source /nfs/home/vyasa/software/pkg/blue_bert_py_env/bin/activate
   # --do_lower_case=true
 
 
- python bluebert/run_bluebert.py   --do_train=true   --do_eval=false   --do_predict=true   --task_name="chemprot"   --vocab_file=$BlueBERT_DIR/vocab.txt   --bert_config_file=$BlueBERT_DIR/bert_config.json   --init_checkpoint=$BlueBERT_DIR/bert_model.ckpt   --num_train_epochs=10.0   --data_dir=$DATASET_DIR   --output_dir=$OUTPUT_DIR   --do_lower_case=true --max_seq_length=512
+ python bluebert/run_bluebert.py   --do_train=false   --do_eval=false   --do_predict=true   --task_name="chemprot"   --vocab_file=$BlueBERT_DIR/vocab.txt   --bert_config_file=$BlueBERT_DIR/bert_config.json   --init_checkpoint=$BlueBERT_DIR/bert_model.ckpt   --num_train_epochs=10.0   --data_dir=$DATASET_DIR   --output_dir=$OUTPUT_DIR   --do_lower_case=true --max_seq_length=128
 
 # python ddi/pubmed_to_ddi_bert_data.py -i=$DATASET_DIR/pubmed_data/2019_merged_json_fixed/ -o=$DATASET_DIR/pubmed_data/ -n=1
 # sbatch -G 0 -o pubmed_to_ddi_bert.txt -w devbox4 ./ddi/note.sh
